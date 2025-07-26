@@ -2,7 +2,7 @@ class DrawarItemModel {
   final String title;
   final String image;
 
-  DrawarItemModel({
+  const DrawarItemModel({
     required this.title,
     required this.image,
   });

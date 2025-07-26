@@ -1,6 +1,10 @@
+import 'package:dash_board/models/drawar_item_model.dart';
 import 'package:dash_board/utils/app_images.dart';
+import 'package:dash_board/widgets/drawar_item.dart';
 import 'package:dash_board/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
+
+import 'drawar_item_list_view.dart';
 
 class CustomDrawar extends StatelessWidget {
   const CustomDrawar({super.key});
@@ -17,6 +21,7 @@ class CustomDrawar extends StatelessWidget {
             subtitle: 'demo@gmail.com',
           ),
           SizedBox(height: 8),
+          DrawarItemListView(),
         ],
       ),
     );
