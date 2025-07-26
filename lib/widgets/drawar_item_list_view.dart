@@ -4,10 +4,17 @@ import '../models/drawar_item_model.dart';
 import '../utils/app_images.dart';
 import 'drawar_item.dart';
 
-class DrawarItemListView extends StatelessWidget {
+class DrawarItemListView extends StatefulWidget {
   const DrawarItemListView({super.key});
 
-  static const List<DrawarItemModel> items = [
+  @override
+  State<DrawarItemListView> createState() =>
+      _DrawarItemListViewState();
+}
+
+class _DrawarItemListViewState
+    extends State<DrawarItemListView> {
+  final List<DrawarItemModel> items = [
     DrawarItemModel(
       title: 'Dashboard',
       image: Assets.imagesDashboard,
@@ -29,6 +36,7 @@ class DrawarItemListView extends StatelessWidget {
       image: Assets.imagesMyInvestments,
     ),
   ];
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +45,21 @@ class DrawarItemListView extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: DrawarItem(drawarItemModel: items[index]),
+        return GestureDetector(
+          onTap: () {
+            if (activeIndex != index) {
+              setState(() {
+                activeIndex = index;
+              });
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: DrawarItem(
+              drawarItemModel: items[index],
+              isActive: activeIndex == index,
+            ),
+          ),
         );
       },
     );

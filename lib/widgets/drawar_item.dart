@@ -1,22 +1,23 @@
 import 'package:dash_board/models/drawar_item_model.dart';
-import 'package:dash_board/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import 'active_drawar_item.dart';
+import 'inactive_drawar_item.dart';
 
 class DrawarItem extends StatelessWidget {
   const DrawarItem({
     super.key,
     required this.drawarItemModel,
+    required this.isActive,
   });
+  final bool isActive;
   final DrawarItemModel drawarItemModel;
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: SvgPicture.asset(drawarItemModel.image),
-      title: Text(
-        drawarItemModel.title,
-        style: AppStyles.styleMedium16,
-      ),
-    );
+    return isActive
+        ? ActiveDrawarItem(drawarItemModel: drawarItemModel)
+        : InActiveDrawarItem(
+            drawarItemModel: drawarItemModel,
+          );
   }
 }
