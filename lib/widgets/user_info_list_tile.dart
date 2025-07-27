@@ -1,3 +1,4 @@
+import 'package:dash_board/models/user_info_model.dart';
 import 'package:dash_board/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -5,11 +6,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 class UserInfoListTile extends StatelessWidget {
   const UserInfoListTile({
     super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
+    required this.userInfoModel,
   });
-  final String image, title, subtitle;
+  final UserInfoModel userInfoModel;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +17,16 @@ class UserInfoListTile extends StatelessWidget {
       color: Color(0xFFFAFAFA),
       child: ListTile(
         leading: SvgPicture.asset(
-          image,
+          userInfoModel.image,
           width: 32,
           height: 32,
         ),
         title: Text(
-          title,
+          userInfoModel.title,
           style: AppStyles.styleSemiBold16,
         ),
         subtitle: Text(
-          subtitle,
+          userInfoModel.subTitle,
           style: AppStyles.styleRegular12,
         ),
       ),

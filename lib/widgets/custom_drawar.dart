@@ -4,6 +4,7 @@ import 'package:dash_board/widgets/inactive_drawar_item.dart';
 import 'package:dash_board/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
 
+import '../models/user_info_model.dart';
 import 'drawar_item_list_view.dart';
 
 class CustomDrawar extends StatelessWidget {
@@ -17,9 +18,11 @@ class CustomDrawar extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: UserInfoListTile(
-              image: Assets.imagesAvatar3,
-              title: 'Lekan Okeowo',
-              subtitle: 'demo@gmail.com',
+              userInfoModel: UserInfoModel(
+                image: ' Assets.imagesAvatar3',
+                title: 'Lekan Okeowo',
+                subTitle: 'demo@gmail.com',
+              ),
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 8)),
