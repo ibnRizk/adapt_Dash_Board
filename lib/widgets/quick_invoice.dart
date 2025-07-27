@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'custom_background_container.dart';
 import 'custom_text_field.dart';
+import 'quick_invoice_form.dart';
 import 'quick_invoice_header.dart';
 
 class QuickInvoice extends StatelessWidget {
@@ -21,6 +22,7 @@ class QuickInvoice extends StatelessWidget {
             title: 'Customer name',
             hint: 'Madraniadi20@gmail',
           ),
+          QuickInvoiceForm(),
         ],
       ),
     );
