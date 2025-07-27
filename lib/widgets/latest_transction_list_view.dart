@@ -26,14 +26,17 @@ class LatestTransctionListView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return UserInfoListTile(
-          userInfoModel: items[index],
-        );
-      },
+      child: Row(
+        children: items
+            .map(
+              (e) => IntrinsicWidth(
+                child: UserInfoListTile(userInfoModel: e),
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }
