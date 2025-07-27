@@ -1,6 +1,5 @@
-import 'package:dash_board/widgets/all_expenses.dart';
 import 'package:dash_board/widgets/custom_drawar.dart';
-import 'package:dash_board/widgets/quick_invoice.dart';
+import 'package:dash_board/widgets/my_cards_page_view.dart';
 import 'package:flutter/material.dart';
 
 import 'all_expenses_and_quick_invoice.dart';
@@ -13,11 +12,14 @@ class DashboardDesktopLayout extends StatelessWidget {
     return Row(
       children: [
         Expanded(child: CustomDrawar()),
-        SizedBox(height: 32),
+        SizedBox(width: 32),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: AllExpensesAndQuickInvoice(),
         ),
+        SizedBox(width: 24),
+
+        Expanded(child: MyCardsPageView()),
       ],
     );
   }
