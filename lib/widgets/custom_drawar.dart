@@ -13,29 +13,56 @@ class CustomDrawar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Column(
-        children: [
-          UserInfoListTile(
-            image: Assets.imagesAvatar3,
-            title: 'Lekan Okeowo',
-            subtitle: 'demo@gmail.com',
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: UserInfoListTile(
+              image: Assets.imagesAvatar3,
+              title: 'Lekan Okeowo',
+              subtitle: 'demo@gmail.com',
+            ),
           ),
-          SizedBox(height: 8),
+          SliverToBoxAdapter(child: SizedBox(height: 8)),
           DrawarItemListView(),
-          Expanded(child: SizedBox()),
-          InActiveDrawarItem(
-            drawarItemModel: DrawarItemModel(
-              title: 'Setting system',
-              image: Assets.imagesSettings,
+
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(child: SizedBox(height: 20)),
+                InActiveDrawarItem(
+                  drawarItemModel: DrawarItemModel(
+                    title: 'Setting system',
+                    image: Assets.imagesSettings,
+                  ),
+                ),
+                InActiveDrawarItem(
+                  drawarItemModel: DrawarItemModel(
+                    title: 'Logout account',
+                    image: Assets.imagesLogout,
+                  ),
+                ),
+              ],
             ),
           ),
-          InActiveDrawarItem(
-            drawarItemModel: DrawarItemModel(
-              title: 'Logout account',
-              image: Assets.imagesLogout,
-            ),
-          ),
-          SizedBox(height: 48),
+
+          // SliverToBoxAdapter(
+          //   child: InActiveDrawarItem(
+          //     drawarItemModel: DrawarItemModel(
+          //       title: 'Setting system',
+          //       image: Assets.imagesSettings,
+          //     ),
+          //   ),
+          // ),
+          // SliverToBoxAdapter(
+          //   child: InActiveDrawarItem(
+          //     drawarItemModel: DrawarItemModel(
+          //       title: 'Logout account',
+          //       image: Assets.imagesLogout,
+          //     ),
+          //   ),
+          // ),
+          SliverToBoxAdapter(child: SizedBox(height: 48)),
         ],
       ),
     );

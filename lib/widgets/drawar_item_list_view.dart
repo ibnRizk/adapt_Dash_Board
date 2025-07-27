@@ -40,9 +40,7 @@ class _DrawarItemListViewState
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+    return SliverList.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
         return GestureDetector(
