@@ -10,7 +10,9 @@ class DashboardDesktopLayout extends StatelessWidget {
     return Row(
       children: [
         Expanded(child: CustomDrawar()),
+        SizedBox(height: 32),
         Expanded(
+          flex: 2,
           child: Column(
             children: [Expanded(child: AllExpenses())],
           ),
