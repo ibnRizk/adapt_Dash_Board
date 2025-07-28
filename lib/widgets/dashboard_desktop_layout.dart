@@ -1,10 +1,8 @@
 import 'package:dash_board/widgets/custom_drawar.dart';
-import 'package:dash_board/widgets/my_cards_page_view.dart';
-import 'package:dash_board/widgets/my_cards_section.dart';
 import 'package:flutter/material.dart';
 
 import 'all_expenses_and_quick_invoice.dart';
-import 'transction_history.dart';
+import 'my_cards_and_transction_history_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -21,7 +19,9 @@ class DashboardDesktopLayout extends StatelessWidget {
         ),
         SizedBox(width: 24),
 
-        Expanded(child: TrasnctionHistory()),
+        Expanded(
+          child: MyCardsAndTransctionHistorySection(),
+        ),
       ],
     );
   }

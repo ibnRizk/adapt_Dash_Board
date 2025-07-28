@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/app_styles.dart';
 import 'transaction_history_header.dart';
 
 class TrasnctionHistory extends StatelessWidget {
