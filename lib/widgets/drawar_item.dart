@@ -1,8 +1,7 @@
 import 'package:dash_board/models/drawar_item_model.dart';
 import 'package:flutter/material.dart';
 
-import 'active_drawar_item.dart';
-import 'inactive_drawar_item.dart';
+import 'active_andinactive_drawar_item.dart';
 
 class DrawarItem extends StatelessWidget {
   const DrawarItem({

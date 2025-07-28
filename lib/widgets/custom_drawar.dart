@@ -1,11 +1,11 @@
-import 'package:dash_board/models/drawar_item_model.dart';
-import 'package:dash_board/utils/app_images.dart';
-import 'package:dash_board/widgets/inactive_drawar_item.dart';
-import 'package:dash_board/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
 
+import '../models/drawar_item_model.dart';
 import '../models/user_info_model.dart';
+import '../utils/app_images.dart';
+import 'active_andinactive_drawar_item.dart';
 import 'drawar_item_list_view.dart';
+import 'user_info_list_tile.dart';
 
 class CustomDrawar extends StatelessWidget {
   const CustomDrawar({super.key});
@@ -13,10 +13,10 @@ class CustomDrawar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: const Color.fromRGBO(255, 255, 255, 1),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: UserInfoListTile(
               userInfoModel: UserInfoModel(
                 image: Assets.imagesAvatar3,
@@ -25,9 +25,10 @@ class CustomDrawar extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(child: SizedBox(height: 8)),
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 8),
+          ),
           DrawarItemListView(),
-
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
@@ -45,27 +46,10 @@ class CustomDrawar extends StatelessWidget {
                     image: Assets.imagesLogout,
                   ),
                 ),
+                SizedBox(height: 48),
               ],
             ),
           ),
-
-          // SliverToBoxAdapter(
-          //   child: InActiveDrawarItem(
-          //     drawarItemModel: DrawarItemModel(
-          //       title: 'Setting system',
-          //       image: Assets.imagesSettings,
-          //     ),
-          //   ),
-          // ),
-          // SliverToBoxAdapter(
-          //   child: InActiveDrawarItem(
-          //     drawarItemModel: DrawarItemModel(
-          //       title: 'Logout account',
-          //       image: Assets.imagesLogout,
-          //     ),
-          //   ),
-          // ),
-          SliverToBoxAdapter(child: SizedBox(height: 48)),
         ],
       ),
     );

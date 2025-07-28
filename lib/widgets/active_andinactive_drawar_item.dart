@@ -23,3 +23,27 @@ class InActiveDrawarItem extends StatelessWidget {
     );
   }
 }
+
+class ActiveDrawarItem extends StatelessWidget {
+  const ActiveDrawarItem({
+    super.key,
+    required this.drawarItemModel,
+  });
+
+  final DrawarItemModel drawarItemModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: SvgPicture.asset(drawarItemModel.image),
+      title: Text(
+        drawarItemModel.title,
+        style: AppStyles.styleBold16,
+      ),
+      trailing: Container(
+        width: 3.27,
+        decoration: BoxDecoration(color: Color(0xFF4EB7F2)),
+      ),
+    );
+  }
+}
